@@ -217,12 +217,18 @@ function createFood(event){
     axios.post(`http://localhost:3000/food`, body)
         .then(function(res){
 
-            for (let i = 0; i < res.data.length; i++){
-                const pElement2 = document.createElement('p');
-                pElement2.textContent = res.data[i];
-                document.body.appendChild(pElement2);
-                foodInput.value = ''
-            }
+            // for (let i = 0; i < res.data.length; i++){
+            //     const pElement2 = document.createElement('p');
+            //     pElement2.textContent = res.data[i];
+            //     document.body.appendChild(pElement2);
+            //     foodInput.value = ''
+            // }
+            const resLength = res.data.length;
+            const pElement2 = document.createElement('p');
+            pElement2.textContent = res.data[resLength-1];
+            document.body.appendChild(pElement2);
+            foodInput = '';
+
             console.log(res.data);
         
         })
