@@ -221,6 +221,7 @@ function createFood(event){
                 const pElement2 = document.createElement('p');
                 pElement2.textContent = res.data[i];
                 document.body.appendChild(pElement2);
+                foodInput.value = ''
             }
             console.log(res.data);
         
